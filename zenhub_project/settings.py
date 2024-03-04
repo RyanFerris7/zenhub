@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure--^1$#wn7*9q+ej$_2)^ibqk^0mdoyh+p((tufjih5h++*3!w4a
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-ryanferris7-zenhub-2ncfeobrs30.ws-eu108.gitpod.io']
+ALLOWED_HOSTS = ['8000-ryanferris7-zenhub-2ncfeobrs30.ws-eu108.gitpod.io', '.herokuapp.com']
 
 
 # Application definition
@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'blog',
 ]
 
 MIDDLEWARE = [

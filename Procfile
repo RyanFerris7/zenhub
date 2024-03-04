@@ -1,0 +1,1 @@
+web: gunicorn zenhub_project.wsgi

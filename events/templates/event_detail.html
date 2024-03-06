@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ event.title }}</title>
+</head>
+<body>
+    <!-- Message Display code -->
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    <!------------------------>
+
+    <!-- Displays Event Details -->
+    <h1>{{ event.title }}</h1>
+    <p>Event Type: {{ event.type }}</p>
+    <p>Date: {{ event.time }}</p>
+    <p>Available Slots: {{ event.available_slots }}</p>
+    <!------------------------>
+    
+    <!-- Book Event form POST call -->
+    <h2>Book Event</h2>
+    <form method="post" action="{% url 'book_event' event.id %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Book Event</button>
+    </form>
+    <!------------------------>
+
+</body>
+</html>

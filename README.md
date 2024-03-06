@@ -22,3 +22,7 @@
 
 # Make sure to use this to pull code. 
 # git pull upstream main 
+
+python -m venv venv       # Create a virtual environment
+source venv/bin/activate  # Activate the virtual environment on Linux or macOS
+.\venv\Scripts\activate   # Activate the virtual environment on Windows

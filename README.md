@@ -19,3 +19,6 @@
 
 # For HTML / CSS sections, the same individual section
 # system also applies. 
+
+# Make sure to use this to pull code. 
+# git pull upstream main 

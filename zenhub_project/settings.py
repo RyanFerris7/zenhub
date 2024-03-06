@@ -32,7 +32,9 @@ SECRET_KEY = 'django-insecure--^1$#wn7*9q+ej$_2)^ibqk^0mdoyh+p((tufjih5h++*3!w4a
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-ryanferris7-zenhub-2ncfeobrs30.ws-eu108.gitpod.io', '8000-ariannesantiago-zenhub-yf21ouw38kr.ws-eu108.gitpod.io', '.herokuapp.com']
+
+ALLOWED_HOSTS = ['8000-ryanferris7-zenhub-2ncfeobrs30.ws-eu108.gitpod.io', '8000-cianthornhill-zenhub-d3266b5m0eg.ws-eu108.gitpod.io', '8000-ariannesantiago-zenhub-yf21ouw38kr.ws-eu108.gitpod.io', '.herokuapp.com']
+
 
 
 # Application definition
@@ -150,5 +152,6 @@ CSRF_TRUSTED_ORIGINS = [
     "https://*.codeanyapp.com",
     "https://*.herokuapp.com",
     "https://8000-ryanferris7-zenhub-2ncfeobrs30.ws-eu108.gitpod.io",
-    "http://8000-ariannesantiago-zenhub-yf21ouw38kr.ws-eu108.gitpod.io"
+    "http://8000-ariannesantiago-zenhub-yf21ouw38kr.ws-eu108.gitpod.io",
+    "https://8000-cianthornhill-zenhub-d3266b5m0eg.ws-eu108.gitpod.io"
 ]

@@ -20,12 +20,14 @@ def book_event(request, event_id):
 
         if form.is_valid():
             event = Event.objects.get(id=event_id)
-            if event.available_slots > 0:
+            current_slots = Booking.objects.filter(event=event).count()  # Retrieve current slots
+
+            if event.available_slots >= current_slots:
                 booking = form.save(commit=False)
                 booking.event = event
                 booking.user = request.user # Set the booking user
                 booking.save()
-                event.available_slots -= 1
+                event.current_slots -= 1
                 event.save()
 
                 print("Form Post successful")

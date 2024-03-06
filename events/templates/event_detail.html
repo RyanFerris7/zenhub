@@ -18,9 +18,11 @@
 
     <!-- Displays Event Details -->
     <h1>{{ event.title }}</h1>
+    <h2>Instructor: {{ event.instructor }}</h2>
+    <p>Details: {{ event.description }}</p>
     <p>Event Type: {{ event.type }}</p>
     <p>Date: {{ event.time }}</p>
-    <p>Available Slots: {{ event.available_slots }}</p>
+    <p>Availability: {{ event.current_slots }} / {{event.available_slots}}</p>
     <!------------------------>
     
     <!-- Book Event form POST call -->

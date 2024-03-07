@@ -11,15 +11,11 @@
   integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
   crossorigin="anonymous"></script>
 
-  <link rel="stylesheet" href="{% static '/css/base.css' %}">
-
   <title>ZENHUB WELLNESS</title>
 </head>
 
 <body>
-  <!--Insert Header using Include. This will be a nav bar including Tugi's Login functionality.-->
-  <!-- {% include 'includes/header.html' %} -->
-  {% include 'includes/header.html' %}
+  {% include 'header.html' %}
 
     <main>
         {% block content %}

@@ -1,4 +1,5 @@
 <!-- templates/home.html -->
+<!-- This is a temporary Homepage so that we could test log in functionality. We will be grabbing the login in a link and href and putting it into the nav bar.-->
 {% extends "base.html" %}
 
 {% block title %}Home{% endblock %}
@@ -12,7 +13,7 @@ Welcome <br>{{ user.username }}!, <br>Enjoy your visit to our SITE!
     <button type="submit">Log Out</button>
   </form>
 {% else %}
-<p>You are logged out,please log in<br><a href="{% url 'login' %}">Log in</a></p>
+<p>You are logged out,please log in<br><a href="{% url 'login' %}">Log in</a></p> <!-- <li><a href="{% url 'login' %}">Log in</a></li> -->
 <p><a href="{% url 'password_reset' %}">Password Reset</a></p>
 
 {% endif %}

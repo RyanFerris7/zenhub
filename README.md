@@ -1,28 +1,14 @@
 # RULES 
-#
-# 1. Do not edit or adjust anyone else's code.
-#
-# 2. If something needs to be changed, just ask 
-#    the person who wrote it. 
-#
-# 3. Add as many lines as you need to your sections.
-#
-# 4. Use comments to to help everyone else read the 
-#    code and understand what it does. 
-#
-# 5. Always pull before pushing, it'll help prevent
-#    merge conflicts. 
-
-
-# Refer to documentation if stuck, all of it is on 
-# the trello board.
-
-# For HTML / CSS sections, the same individual section
-# system also applies. 
-
-# Make sure to use this to pull code. 
-# git pull upstream main 
-
-python -m venv venv       # Create a virtual environment
-source venv/bin/activate  # Activate the virtual environment on Linux or macOS
-.\venv\Scripts\activate   # Activate the virtual environment on Windows
+# COLOURS 
+# ---------------
+# #fff - white
+# #b0cece - jet stream / light blue
+# #0c2543 - blue zodiac / dark blue 
+# #6c9d87 - oxley / mid green 
+# #eàb30 - golden grass / gold
+# #De6994 - blue chill / mid blue
+# #6c5043 - tobacco brown / brown 
+# 7035fd - electric violet / violet
+# #e18891 - petite orchid / pink
+# #d44719 - orange roughy - orange
+# ---------------

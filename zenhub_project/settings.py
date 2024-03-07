@@ -33,7 +33,7 @@ SECRET_KEY = 'django-insecure--^1$#wn7*9q+ej$_2)^ibqk^0mdoyh+p((tufjih5h++*3!w4a
 DEBUG = True
 
 
-ALLOWED_HOSTS = ['8000-ryanferris7-zenhub-2ncfeobrs30.ws-eu108.gitpod.io', '8000-cianthornhill-zenhub-d3266b5m0eg.ws-eu108.gitpod.io', '8000-ariannesantiago-zenhub-yf21ouw38kr.ws-eu108.gitpod.io', '8000-tugii21-zenhub-5pensjuxgd8.ws-eu108.gitpod.io', '.herokuapp.com']
+ALLOWED_HOSTS = ['8000-ryanferris7-zenhub-2ncfeobrs30.ws-eu108.gitpod.io', '8000-cianthornhill-zenhub-x9q25lcmnzu.ws-eu108.gitpod.io', '8000-ariannesantiago-zenhub-yf21ouw38kr.ws-eu108.gitpod.io', '8000-tugii21-zenhub-f6emev1j338.ws-eu108.gitpod.io', '.herokuapp.com']
 
 
 
@@ -49,6 +49,8 @@ INSTALLED_APPS = [
     'cloudinary_storage',
     'cloudinary',
     'blog',
+    'accounts',  # new
+    'events',
 ]
 
 MIDDLEWARE = [
@@ -67,7 +69,8 @@ ROOT_URLCONF = 'zenhub_project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [TEMPLATES_DIR],
+        "DIRS": [BASE_DIR / "templates"],  # new
+        #'DIRS': [TEMPLATES_DIR],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -152,7 +155,14 @@ CSRF_TRUSTED_ORIGINS = [
     "https://*.codeanyapp.com",
     "https://*.herokuapp.com",
     "https://8000-ryanferris7-zenhub-2ncfeobrs30.ws-eu108.gitpod.io",
-    "https://8000-ariannesantiago-zenhub-yf21ouw38kr.ws-eu108.gitpod.io",
-    "https://8000-cianthornhill-zenhub-d3266b5m0eg.ws-eu108.gitpod.io",
-    "https://8000-tugii21-zenhub-5pensjuxgd8.ws-eu108.gitpod.io"
+    "http://8000-ariannesantiago-zenhub-yf21ouw38kr.ws-eu108.gitpod.io",
+    "https://8000-cianthornhill-zenhub-x9q25lcmnzu.ws-eu108.gitpod.io",
+    "https://8000-tugii21-zenhub-f6emev1j338.ws-eu108.gitpod.io"
 ]
+
+# django_project/settings.py
+LOGIN_REDIRECT_URL = "home"  # new
+LOGOUT_REDIRECT_URL = "home"  # new
+
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend" # new
+

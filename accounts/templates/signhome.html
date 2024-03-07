@@ -6,15 +6,43 @@
 
 {% block content %}
 {% if user.is_authenticated %}
-Welcome <br>{{ user.username }}!, <br>Enjoy your visit to our SITE!
-<p><a href="{% url 'password_change' %}">Password Change</a></p>
-<form action="{% url 'logout' %}" method="post">
-    {% csrf_token %}
-    <button type="submit">Log Out</button>
-  </form>
-{% else %}
-<p>You are logged out,please log in<br><a href="{% url 'login' %}">Log in</a></p> <!-- <li><a href="{% url 'login' %}">Log in</a></li> -->
-<p><a href="{% url 'password_reset' %}">Password Reset</a></p>
+<section>
+  <div class="container-fluid">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Welcome</h5>
+        <p class="card-text">{{ user.username }}!, <br>Enjoy your visit!</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container-fluid">
+    <div class="card">
+      <div class="card-body">
+        <p class="card-text"><a href="{% url 'password_change' %}" class="card-link">Password Change</a></p>
+        <form action="{% url 'logout' %}" method="post">
+          {% csrf_token %}
+          <button type="submit" class="btn btn-danger">Log Out</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container-fluid">
+    <div class="card">
+      <div class="card-body">
+        {% if user.is_authenticated %}
+          <p class="card-text">Please log in<br><a href="{% url 'login' %}" class="card-link">Log in</a></p>
+          <p class="card-text"><a href="{% url 'password_reset' %}" class="card-link">Password Reset</a></p>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
 
 {% endif %}
 {% endblock %}

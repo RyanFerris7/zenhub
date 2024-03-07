@@ -4,3 +4,25 @@
     object-fit: cover;
 }
 
+.bsb-hero-2 {
+    min-height: 700px;
+}
+
+.nav-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 30px;
+    margin-right: 10px;
+}
+
+.navbar-toggler {
+        display: flex;
+        align-items: flex-start;
+    }
+
+@media (min-width: 768px) {
+    .nav-title :hover {
+        scale: 1.1;
+        transition: 0.2s ease-in-out;
+        text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+    }
+}

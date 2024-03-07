@@ -21,11 +21,15 @@ from django.views.generic.base import TemplateView  # new
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+<<<<<<< HEAD
     path("accounts/", include("accounts.urls")),  # new
     path("accounts/", include("django.contrib.auth.urls")),  # new
     path("", TemplateView.as_view(template_name="signhome.html"), name="home"),  # new
+=======
+    # path('', include("events.urls")),
+>>>>>>> db378b4fbe8b7cf2855c5800b3f2021c7bc6b637
     # path('accounts/', include('accounts.urls')),
-    # path('events/', include('events.urls')),
+    path('events/', include('events.urls')),
     # path('blog/', include('blog.urls')),
     # Add other app URLs as needed
 ]

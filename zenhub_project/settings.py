@@ -49,7 +49,11 @@ INSTALLED_APPS = [
     'cloudinary_storage',
     'cloudinary',
     'blog',
+<<<<<<< HEAD
     'accounts',  # new
+=======
+    'events',
+>>>>>>> db378b4fbe8b7cf2855c5800b3f2021c7bc6b637
 ]
 
 MIDDLEWARE = [

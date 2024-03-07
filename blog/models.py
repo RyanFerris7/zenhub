@@ -19,10 +19,48 @@ from django.db import models
 
 
 # Arianne's Code
+from django.contrib.auth.models import User
+from cloudinary.models import CloudinaryField
 
+CATEGORIES = (
+    ("Fitness", "Fitness"),
+    ("Mental Wellbeing", "Mental Wellbeing"),
+    ("Life Coaching", "Life Coaching"),
+    ("General", "General"),
+)
+STATUS = ((0, "Draft"), (1, "Published"))
 
+class Post(models.Model):
 
+    title = models.CharField(max_length=200, unique=True)
+    slug = models.SlugField(max_length=200, unique=True)
+    featured_image = CloudinaryField(default='placeholder')
+    category = models.CharField(max_length=50, choices=CATEGORIES, default="General")
+    content = models.TextField()
+    username = models.ForeignKey(User, on_delete=models.CASCADE, related_name="blog_posts")
+    publish = models.DateTimeField(auto_now_add=True)
+    status = models.IntegerField(choices=STATUS, default=0)
+    updated_on = models.DateTimeField(auto_now=True)
+    
+    class Meta:
+        ordering = ("-publish",)
 
+    def __str__(self):
+        return self.title
+
+class Comment(models.Model):
+
+    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name="comments")
+    username = models.ForeignKey(User, on_delete=models.CASCADE, related_name="commenter")
+    body = models.TextField()
+    approved = models.BooleanField(default=False)
+    publish = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ("publish",)
+
+    def __str__(self):
+        return f"Comment by {self.username}"
 
 
 

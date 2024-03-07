@@ -1,0 +1,25 @@
+<!-- profile.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Profile</title>
+</head>
+<body>
+    <h1>User Profile</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save</button>
+    </form>
+
+    <h1>Your Bookings</h1>
+    <ul>
+        {% for booking in user_bookings %}
+        <li>{{ booking.event.title }} - {{ booking.date_booked }}</li>
+        {% empty %}
+        <li>No bookings found.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

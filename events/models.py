@@ -1,6 +1,7 @@
 from django.db import models
 from datetime import datetime
 from django.contrib.auth.models import User
+from cloudinary.models import CloudinaryField
 
 
 # Create your models here.
@@ -13,6 +14,7 @@ EVENT_TYPES = (
 
 class Event(models.Model):
     title = models.CharField(max_length=200)
+    image = CloudinaryField(default='placeholder')
     type = models.CharField(max_length=50, choices=EVENT_TYPES, default="Fitness Class")
     instructor = models.ForeignKey(User, on_delete=models.CASCADE, related_name='instructor_events', null=True, blank=True) #related name to access events associated with a specific instructor from the User model.
     description = models.TextField(default="")

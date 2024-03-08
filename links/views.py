@@ -1,8 +1,9 @@
+from django.shortcuts import render, redirect
 from django.urls import path
 from django.http import HttpResponse
 
 def home(request):
-    return HttpResponse('home')
+    return render(request, 'links/home.html')
 
 
 def team(request):

@@ -52,7 +52,7 @@ def post_detail(request, post):
     else:
         comment_form = NewCommentForm()
     
-        return render(request, 'blog/post_detail.html', {'post': post, 'comments': user_comment, 'comments': comments, 'comment_form': comment_form})
+        return render(request, 'blog/post_detail.html', {'post': post, 'comments': comments, 'comment_form': comment_form})
 
 
 

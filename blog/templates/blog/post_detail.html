@@ -23,7 +23,7 @@
                 {% for comment in comments %}
                 Comment {{ forloop.counter }} by {{ comment.name }}
                 on {{ comment.publish }}
-                {{ comment.content|linebreaks }}
+                {{ comment.body|linebreaks }}
                 {% empty %}
                 <p>There are no comments for this post.</p>
                 {% endfor %}

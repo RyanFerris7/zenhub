@@ -41,4 +41,4 @@ def book_event(request, event_id):
                 return render(request, 'no_slots_available.html')
     else:
         form = BookingForm()
-    return render(request, 'event_detail.html', {'form': form})
+        return render(request, 'event_detail.html', {'form': form})

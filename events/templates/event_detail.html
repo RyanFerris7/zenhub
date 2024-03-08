@@ -26,10 +26,10 @@
             <!------------------------>
 
             <!-- Book Event form POST call -->
-            <form class="event-bookingbtn-container"method="post" action="{% url 'book_event' event.id %}">
+            <form class="event-booking btn-container" method="post" action="{% url 'book_event' event.id %}">
                 {% csrf_token %}
                 {{ form.as_p }}
-                <button class="event-bookingbtn text-center" type="submit">Book Event</button>
+                <button class="event-booking btn text-center" type="submit">Book Event</button>
             </form>
             <!------------------------>
 

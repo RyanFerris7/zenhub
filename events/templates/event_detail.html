@@ -1,34 +1,40 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<body>
-    <!-- Message Display code -->
-    {% if messages %}
-    <ul class="messages">
-        {% for message in messages %}
-            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-        {% endfor %}
-    </ul>
-    {% endif %}
-    <!------------------------>
 
-    <!-- Displays Event Details -->
-    <h1>{{ event.title }}</h1>
-    <h2>Instructor: {{ event.instructor }}</h2>
-    <p>Details: {{ event.description }}</p>
-    <p>Event Type: {{ event.type }}</p>
-    <p>Date: {{ event.time }}</p>
-    <p>Availability: {{ event.current_slots }} / {{event.available_slots}}</p>
-    <!------------------------>
-    
-    <!-- Book Event form POST call -->
-    <h2>Book Event</h2>
-    <form method="post" action="{% url 'book_event' event.id %}">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Book Event</button>
-    </form>
-    <!------------------------>
+<section>
+    <div class="container-fluid">
 
-</body>
- {% endblock %}
+        <body>
+                <!-- Message Display code -->
+                {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                    <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+                        {% endfor %}
+                </ul>
+                {% endif %}
+            <!------------------------>
+
+            <!-- Displays Event Details -->
+            <h1 class="event-title">{{ event.title }}</h1>
+            <h2 class="event-instructor">Instructor: {{ event.instructor }}</h2>
+            <p class="event-details"><strong>Details:</strong> {{ event.description }}</p>
+            <p class="event-type"><strong>Event Type:</strong> {{ event.type }}</p>
+            <p class="event-date"><strong>Date:</strong> {{ event.time }}</p>
+            <p class="event-availability"><strong>Availability:</strong> {{ event.current_slots }} / {{event.available_slots}}</p>
+            <!------------------------>
+
+            <!-- Book Event form POST call -->
+            <form class="event-bookingbtn-container"method="post" action="{% url 'book_event' event.id %}">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button class="event-bookingbtn text-center" type="submit">Book Event</button>
+            </form>
+            <!------------------------>
+
+        </body>
+    </div>
+</section>
+
+{% endblock %}

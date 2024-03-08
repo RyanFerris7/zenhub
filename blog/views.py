@@ -22,6 +22,7 @@ from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect
 from .models import Post, Comment
 from .forms import NewCommentForm
@@ -33,6 +34,7 @@ class PostList(ListView):
     # paginate_by = 4
     context_object_name = 'post_list'
 
+@login_required
 def post_detail(request, post):
 
     post = get_object_or_404(Post, slug=post, status=1)

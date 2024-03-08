@@ -3,6 +3,7 @@ from datetime import datetime, timedelta
 from .models import Event, Booking
 from .forms import BookingForm
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 
 def event_list(request):
     events = Event.objects.all()
@@ -13,6 +14,7 @@ def event_detail(request, event_id):
     form = BookingForm()
     return render(request, 'event_detail.html', {'event': event, 'form': form})
 
+@login_required
 def book_event(request, event_id):
     if request.method == 'POST':
         form = BookingForm(request.POST)

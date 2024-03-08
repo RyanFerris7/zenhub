@@ -1,10 +1,12 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
 from .models import UserProfile
 from events.models import Booking
 from .forms import UserProfileForm
 
+@login_required
 def profile(request):
     #Fetch or create UserProfile
     user_profile, created = UserProfile.objects.get_or_create(user=request.user)
@@ -24,6 +26,7 @@ def profile(request):
     # Pass form and bookings to the template context
     return render(request, 'profile.html', {'form': form, 'user_bookings': user_bookings})
 
+@login_required
 def view_bookings(request):
     # Retrieve bookings associated with the currently logged-in user
     user_bookings = Booking.objects.filter(user=request.user)
@@ -32,6 +35,7 @@ def view_bookings(request):
     context = {'user_bookings': user_bookings}
     return render(request, 'profile.html', context)
 
+@login_required
 def delete_booking(request, booking_id):
     booking = Booking.objects.get(id=booking_id)
     if request.user == booking.user:

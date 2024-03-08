@@ -1,3 +1,7 @@
+main {
+    margin-bottom: 50px;
+}
+
 .top-card-img {
     width: 200px;
     max-height: 200px;
@@ -154,3 +158,4 @@
         font-size: 7vw;
     }
 }
+/* Sign Up */

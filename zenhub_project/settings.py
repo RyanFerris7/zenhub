@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'blog',
     'accounts',  # new
     'events',
+    'user_profile',
 ]
 
 MIDDLEWARE = [

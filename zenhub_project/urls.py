@@ -26,5 +26,6 @@ urlpatterns = [
     path("", TemplateView.as_view(template_name="signhome.html"), name="home"),  # new
     path('blog/', include('blog.urls')),
     path('events/', include('events.urls')),
+    path('profile/', include('user_profile.urls'))
     # Add other app URLs as needed
 ]

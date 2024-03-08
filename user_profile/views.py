@@ -1,9 +1,10 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from .models import UserProfile, Booking
+from django.contrib.auth.models import User
+from .models import UserProfile
+from events.models import Booking
 from .forms import UserProfileForm
 
-# Create your views here.
 def profile(request):
     user_profile, created = UserProfile.objects.get_or_create(user=request.user)
     if request.method == 'POST':
@@ -19,10 +20,10 @@ def profile(request):
 def view_bookings(request):
     # Retrieve bookings associated with the currently logged-in user
     user_bookings = Booking.objects.filter(user=request.user)
-
+    print(user_bookings)
     # Pass bookings to the template context
     context = {'user_bookings': user_bookings}
-    return render(request, 'bookings.html', context)
+    return render(request, 'profile.html', context)
 
 def delete_booking(request, booking_id):
     booking = Booking.objects.get(id=booking_id)

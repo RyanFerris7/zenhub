@@ -7,20 +7,24 @@
 
         <div class="row">
             {% if post_list %}
-            {% for post_item in post_list %}
-            <div class="col-md-3 mb-4">
-                <h2><a class="text-dark" href="{% url 'blog:post_detail' post=post_item.slug %}">{{ post_item.title }}</a></h2>
-
-
-                <p>{{ post_item.content }}</p>
-            </div>
-            {% endfor %}
+                {% for post_item in post_list %}
+                    <div class="col-md-3 mb-4">
+                        <h2><a class="text-dark" href="{% url 'blog:post_detail' post=post_item.slug %}">{{ post_item.title }}</a></h2>
+        
+                        <!-- Display the first 200 characters of the content -->
+                        <p>{{ post_item.content|slice:":200" }} ...</p>
+        
+                        <!-- Add a "Read more" link to the full post -->
+                        <a href="{% url 'blog:post_detail' post=post_item.slug %}">Read more</a>
+                    </div>
+                {% endfor %}
             {% else %}
-            <div class="col-md-12">
-                <p>No posts available.</p>
-            </div>
+                <div class="col-md-12">
+                    <p>No posts available.</p>
+                </div>
             {% endif %}
         </div>
+        
     
 
     </div>

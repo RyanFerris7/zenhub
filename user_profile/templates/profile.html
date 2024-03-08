@@ -1,22 +1,23 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>User Profile</h1>
-    <h2>Username: {{user.username}}</h2>
+<div class="container-fluid">
+    <h1 class="event-title">User Profile</h1>
+    <h2 class="event-instructor">Username: {{user.username}}</h2>
 
     <!-- Display Profile Picture -->
     
         <img src="{{ user_profile.profile_picture.url }}" alt="Profile Picture">
-        <p>There should be a profile picture here.</p>
+        <p class="event-details">There should be a profile picture here.</p>
     
-
+    
     <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit">Save</button>
+        <button type="submit" class="event-details">Save</button>
     </form>
 
-    <h1>Your Bookings</h1>
+    <h1 class="event-title">Your Bookings</h1>
     <ul>
         {% for booking in user_bookings %}
         <li>{{ booking.event.title }} - {{ booking.date_booked }}
@@ -26,7 +27,8 @@
             </form>
         </li>
         {% empty %}
-        <li>No bookings found.</li>
+        <li class="your-bookings">No bookings found.</li>
         {% endfor %}
     </ul>
+</div>
     {% endblock %}

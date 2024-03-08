@@ -1,11 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Event List</title>
-</head>
+{% extends 'base.html' %}
+
+
 <body>
+
+{% block content %}
     <!-- Message Display code -->
     {% if messages %}
     <ul class="messages">
@@ -15,17 +13,24 @@
     </ul>
     {% endif %}
     <!---------------------->
-    
-    <!--Loops Through List of Events and Displays them-->
-    <h1>Event List</h1>
-    <ul>
-        {% for event in events %}
-            <li>
-                <a href="{% url 'event_detail' event.id %}">{{ event.title }}</a>
-                - {{ event.time }}
-            </li>
-        {% endfor %}
-    </ul>
-    <!---------------------->
-</body>
-</html>
+
+    <!--container to space out??-->
+    {% for event in events %}
+    <div class="container d-flex align-items-center justify-content-center mb-3">
+        <div class="card bg-dark text-white" style="width: 750px;">
+            <div class="row">
+                <div class="col-sm-5">
+                    <img class="card-img top-card-img" src="{{ event.image.url }}" alt="Article image" style="width: 100%; height: auto;">
+                </div>
+                <div class="col-sm-7">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ event.title }}</h5>
+                        <p class="card-text">{{ event.description }}</p>
+                        <a href="{% url 'event_detail' event.id %}" class="btn btn-primary">Book</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    {% endblock %}

@@ -16,6 +16,7 @@
         
                         <!-- Add a "Read more" link to the full post -->
                         <a href="{% url 'blog:post_detail' post=post_item.slug %}">Read more</a>
+                        <hr>
                     </div>
                 {% endfor %}
             {% else %}
@@ -29,5 +30,6 @@
 
     </div>
 </div>
+
 
 {% endblock %}

@@ -7,10 +7,10 @@
 .bsb-hero-2 {
     min-height: 700px;
 }
-
+/* Navbar*/
 .nav-title {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 30px;
+    font-size: 24px;
     margin-right: 10px;
 }
 
@@ -18,15 +18,22 @@
         display: flex;
         align-items: flex-start;
     }
+.nav-title:hover {
+    scale: 1.2;
+    transition: 0.3s ease-in-out;
+    color: #7035fd;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
 
 @media (min-width: 768px) {
-    .nav-title :hover {
-        scale: 1.1;
-        transition: 0.2s ease-in-out;
-        text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+    .nav-title:{
+        font-size: 30px;
+    }
+    .nav-title:hover {
+        text-shadow: none;
     }
 }
-/* Styles for event list */
+/* Event List */
 .card-title {
     font-family: 'Bebas Neue', sans-serif;
     font-size: 36px;
@@ -46,7 +53,7 @@
     }
 }
 
-/* Styles for event details */
+/* Event Details */
 .event-title {
     font-family: 'Bebas Neue', sans-serif;
     font-size: 10vw;
@@ -99,16 +106,51 @@
     }
 }
 
-/* Footer text */
+/* Footer Text */
 .footer-text {
     font-family: 'Bebas Neue', sans-serif;
     color: #fff;
     letter-spacing: 2px;
 }
-/* Styles for user profile */
+/* User Profile */
 .your-bookings {
     color: #d44719;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+/* Resources List */
+
+
+
+/* Home */
+.background-image {
+    height: 100vh;
+}
+.text-container {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    margin: 10px 0px;
+    display: inline-block;
+    padding: 0px 45px;
+}
+.home-getstarted {
+    color: #d44719;
+    text-decoration: none;
+    outline: none;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 60px;
+    border: 8px solid #d44719;
+    border-radius: 10px;
+    text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+}
+.home-getstarted:hover {
+    scale: 1.1;
+    transition: 0.3s ease-in-out;
+}
+
+@media (min-width: 768px) {
+    .home-getstarted {
+        font-size: 7vw;
+    }
 }

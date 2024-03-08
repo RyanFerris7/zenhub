@@ -26,3 +26,63 @@
         text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
     }
 }
+
+/* Styles for event details */
+.event-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 10vw;
+    color: #7035fd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: -2px;
+}
+.event-instructor {
+    font-family: 'Arial', sans-serif;
+    text-transform: uppercase;
+    font-size: 3.5vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+.event-details {
+    font-family: 'Arial', sans-serif;
+}
+.event-type {
+    font-family: 'Arial', sans-serif;
+}
+.event-date {
+    font-family: 'Arial', sans-serif;
+}
+.event-availability {
+    font-family: 'Arial', sans-serif;
+}
+.event-bookingbtn-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5vh;
+}
+.event-bookingbtn {
+    font-family: 'Bebas Neue', sans-serif;
+    padding: 20px 30px;
+    font-size: 3.5vh;
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        font-size: 14px; /* Adjust styles as needed */
+    }
+
+    .event-bookingbtn {
+        padding: 8px 16px; /* Adjust styles as needed */
+    }
+}
+
+/* Footer text */
+.footer-text {
+    font-family: 'Bebas Neue', sans-serif;
+    color: #fff;
+    letter-spacing: 2px;
+}

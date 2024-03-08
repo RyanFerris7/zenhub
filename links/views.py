@@ -7,7 +7,7 @@ def home(request):
 
 
 def team(request):
-    return HttpResponse('team')
+    return render(request, 'links/team.html')
 
 
 def resources(request):

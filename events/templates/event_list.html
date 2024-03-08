@@ -1,8 +1,5 @@
 {% extends 'base.html' %}
 
-
-<body>
-
 {% block content %}
     <!-- Message Display code -->
     {% if messages %}
@@ -26,7 +23,13 @@
                     <div class="card-body">
                         <h5 class="card-title">{{ event.title }}</h5>
                         <p class="card-text">{{ event.description }}</p>
-                        <a href="{% url 'event_detail' event.id %}" class="btn btn-primary list-btn">Book</a>
+                        {% if user.is_authenticated %}
+                        <a href="{% url 'event_detail' event.id %}" class="btn btn-primary">Book</a>
+                        {% else %}
+                        <form action="{% url 'login' %}" method="post">
+                        {% csrf_token %}
+                        <button type="submit" class="btn-dark">Log In</button>
+                        {% endif %}
                     </div>
                 </div>
             </div>

@@ -1,11 +1,6 @@
-<!-- profile.html -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>User Profile</title>
-</head>
-<body>
+{% extends 'base.html' %}
+
+{% block content %}
     <h1>User Profile</h1>
     <h2>Username: {{user.username}}</h2>
 
@@ -34,5 +29,4 @@
         <li>No bookings found.</li>
         {% endfor %}
     </ul>
-</body>
-</html>
+    {% endblock %}

@@ -20,7 +20,7 @@
 
  Website is fully responsive to Phone, Tablet, Laptop, Desktop.
 
-![Responsice Mockup](???????????)
+
 
 
 ## Features
@@ -30,9 +30,9 @@
   - Featured on event ,team, resource, login, register pages, the full responsive navigation bar includes links to the event, team, resources, login and register and it is fully responsive to mobile, and to laptop screen.
   - Navigation will allow the user to easily navigate from  one page to other page and it is easy to revert back. 
 
-![Nav Bar with Toggle](???????)
+![Nav Bar with Toggle](https://github.com/tugii21/zenhub/blob/main/assets/images/screenshots/navbar.png)
 
-![Nav Bar](?????????)
+
 
 ## ZENHUB
 
@@ -40,7 +40,7 @@
 
   - ZENHUB is a Learner Wellness site that hopes to access resources and services that promote mental and physical well-being. user can Book sessions or join classes or read our blog resources.
 The site will be targeted towards users who want healthy lifestyle and book class/session with qualified coach. 
-![Our Events Page](????????)
+![Our Events Page](https://github.com/tugii21/zenhub/blob/main/assets/images/screenshots/ourevents.png)
 
 
 
@@ -49,24 +49,25 @@ The site will be targeted towards users who want healthy lifestyle and book clas
   - Our team page will display their names and professions. 
   - when user navigate into our team page, user able to book with sessions with our qualified instructor. 
 
-![Our Team](??????????)
+![Our Team](https://github.com/tugii21/zenhub/blob/main/assets/images/screenshots/ourteam.png)
 
 - __Your Resources__
 
   - This page allows user to read out healthy blog post. 
   - This section is very helpful for anyone who can visit our page and improve their healthy living lifestyle. 
 
-![Your Resources](????????)
+![Your Resources](https://github.com/tugii21/zenhub/blob/main/assets/images/screenshots/zenhubhome.png)
 
 - __Login__
 
   - This page will allow the user login to ZENHUB website and they can go event page and able to book session. 
 
-![Login ](?????????)
+![Login ](https://github.com/tugii21/zenhub/blob/main/assets/images/screenshots/login.png)
 
 - __Register__
 
   - if user did not signed up and previously then user have option to register to our site and book session.
+  ![Register ](https://github.com/tugii21/zenhub/blob/main/assets/images/screenshots/register.png)
 
 
 
@@ -75,13 +76,14 @@ The site will be targeted towards users who want healthy lifestyle and book clas
 
   - The footer displayes copyright information for ZENHUB website. 
 
-![Footer](????????)
+![Footer](https://github.com/tugii21/zenhub/blob/main/assets/images/screenshots/footerzen.png)
 
 ## Team Work and AGILE
 
 The Team used Trello board to assign tasks and keep all the process.
 here is link
-![Trello] https://trello.com/b/8VmEE8rg/hackathon-3
+![Trello] (https://github.com/tugii21/zenhub/blob/main/assets/images/screenshots/trelloz.png)
+https://trello.com/b/8VmEE8rg/hackathon-3
 
 The Team used Slack Huddle channel for daily meeting during remote work and 
 development team is face-to-face conversation.
@@ -112,7 +114,7 @@ We set up the project repo to GitHub and deployed on Heroku and used database on
   - From the source section drop-down menu, select the Main Branch
   - Once the main branch has been selected, the page will be automatically be refreshed with a detailed ribbon display to indicate the successful deployment. 
 
-The live link of Heroku can be found here - 
+The live link of Heroku can be found here - https://zenhub-3aaf93c49ab5.herokuapp.com/
 
 ## Credits 
 

@@ -29,6 +29,7 @@ urlpatterns = [
     # - Using empty path incompatible with actual pathing - path("", TemplateView.as_view(template_name="signhome.html"), name="home"),  # new
     path('blog/', include('blog.urls')),
     path('events/', include('events.urls')),
+    path('profile/', include('user_profile.urls')),
     path('links/', include('links.urls')),
     path('', include('links.urls')),
     # Add other app URLs as needed

@@ -1,11 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Hello</h1>
-</body>
-</html>
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container-fluid">
+    <div class="row">
+
+        <div class="row">
+            {% if post_list %}
+            {% for post_item in post_list %}
+            <div class="col-md-3 mb-4">
+                <h2><a class="text-dark" href="{% url 'blog:post_detail' post=post_item.slug %}">{{ post_item.title }}</a></h2>
+
+
+                <p>{{ post_item.content }}</p>
+            </div>
+            {% endfor %}
+            {% else %}
+            <div class="col-md-12">
+                <p>No posts available.</p>
+            </div>
+            {% endif %}
+        </div>
+    
+
+    </div>
+</div>
+
+{% endblock %}

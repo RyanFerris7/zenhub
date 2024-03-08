@@ -21,6 +21,7 @@ from django.db import models
 # Arianne's Code
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
+from django.urls import reverse
 
 CATEGORIES = (
     ("Fitness", "Fitness"),
@@ -39,8 +40,11 @@ class Post(models.Model):
     content = models.TextField()
     username = models.ForeignKey(User, on_delete=models.CASCADE, related_name="blog_posts")
     publish = models.DateTimeField(auto_now_add=True)
-    status = models.IntegerField(choices=STATUS, default=0)
+    status = models.IntegerField(choices=STATUS, default=1)
     updated_on = models.DateTimeField(auto_now=True)
+
+    def get_absolute_url(self):
+        return reverse('blog:post_detail', args=[str(self.slug)])
     
     class Meta:
         ordering = ("-publish",)

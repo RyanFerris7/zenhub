@@ -6,7 +6,12 @@ from events.models import Booking
 from .forms import UserProfileForm
 
 def profile(request):
+    #Fetch or create UserProfile
     user_profile, created = UserProfile.objects.get_or_create(user=request.user)
+    
+    #Get user's bookings
+    user_bookings = Booking.objects.filter(user=request.user)
+
     if request.method == 'POST':
         form = UserProfileForm(request.POST, request.FILES, instance=user_profile)
         if form.is_valid():
@@ -15,7 +20,9 @@ def profile(request):
             return redirect('profile')
     else:
         form = UserProfileForm(instance=user_profile)
-    return render(request, 'profile.html', {'form': form})
+
+    # Pass form and bookings to the template context
+    return render(request, 'profile.html', {'form': form, 'user_bookings': user_bookings})
 
 def view_bookings(request):
     # Retrieve bookings associated with the currently logged-in user
